@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>t("title")</title>
-    <meta name="viewport" content="width=device-width,initial-scale=1">
+   <title><%= t("title") %></title>
+
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
@@ -10,7 +10,12 @@
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
-  <body>
-    <%= yield %>
-  </body>
-</html>
+
+    <body>
+    <%= render "layouts/header" %>
+      <div class="container">
+        <%= yield %>
+      </div>
+
+    </body>
+   </html>
