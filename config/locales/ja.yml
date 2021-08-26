@@ -1,7 +1,7 @@
 ja:
   l_title: "Rails tutorialのサンプルアプリ"
   h_title: "サンプルアプリ"
-  c_en: "英語"
+  c_en: "English"
   c_ja: "日本語"
   greetings: "こんにちはゲスト"
   home: "ホーム"
@@ -19,7 +19,13 @@ ja:
     formats:
       Default: "%Y-%m-%d"
       Short: "%b %d"
-  static_pages:
-    home:
-      title: "Home - JA"
-  title: "Home - JA"
+  sign_up: "サインアップ"
+  name: "名前"
+  email: "Eメール"
+  password: "パスワード"
+  confirmation: "パスワードを確認"
+  create_my_account: "アカウントを作成"
+  the_form_contains: "このフォームには"
+  error: "エラー!"
+  welcome: "ようこそ!"
+
