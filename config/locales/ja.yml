@@ -28,4 +28,10 @@ ja:
   the_form_contains: "このフォームには"
   error: "エラー!"
   welcome: "ようこそ!"
+  invalid_email_password: "すみません！違います！"
+  log_out: "ログアウト"
+  users: "ユーザー"
+  account: "アカウント"
+  profile: "プロフィール"
+  settings: "設定"
 
