@@ -1,3 +1,10 @@
+GIT
+  remote: https://github.com/mislav/will_paginate.git
+  revision: c0f1f470203e1b311bc559c057d8518da3b2967d
+  branch: master
+  specs:
+    will_paginate (3.3.1)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -66,11 +73,13 @@ GEM
       execjs (~> 2)
     bcrypt (3.1.16)
     bindex (0.8.1)
-    bootsnap (1.8.0)
+    bootsnap (1.8.1)
       msgpack (~> 1.0)
     bootstrap-sass (3.4.1)
       autoprefixer-rails (>= 5.2.1)
       sassc (>= 2.0.0)
+    bootstrap-will_paginate (1.0.0)
+      will_paginate
     builder (3.2.4)
     capybara (3.35.3)
       addressable
@@ -86,6 +95,8 @@ GEM
     crass (1.0.6)
     erubi (1.10.0)
     execjs (2.8.1)
+    faker (2.19.0)
+      i18n (>= 1.6, < 2)
     ffi (1.15.3)
     globalid (0.5.2)
       activesupport (>= 5.0)
@@ -113,10 +124,10 @@ GEM
     msgpack (1.4.2)
     mysql2 (0.5.3)
     nio4r (2.5.8)
-    nokogiri (1.12.3)
+    nokogiri (1.12.4)
       mini_portile2 (~> 2.6.1)
       racc (~> 1.4)
-    nokogiri (1.12.3-x86_64-linux)
+    nokogiri (1.12.4-x86_64-linux)
       racc (~> 1.4)
     pry (0.14.1)
       coderay (~> 1.1)
@@ -128,7 +139,7 @@ GEM
       nio4r (~> 2.0)
     racc (1.5.2)
     rack (2.2.3)
-    rack-mini-profiler (2.3.2)
+    rack-mini-profiler (2.3.3)
       rack (>= 1.2.0)
     rack-proxy (0.7.0)
       rack
@@ -227,7 +238,9 @@ DEPENDENCIES
   bcrypt (~> 3.1.7)
   bootsnap (>= 1.4.4)
   bootstrap-sass (= 3.4.1)
+  bootstrap-will_paginate (= 1.0.0)
   capybara (>= 3.26)
+  faker
   jbuilder (~> 2.7)
   jquery-rails
   listen (~> 3.3)
@@ -245,6 +258,7 @@ DEPENDENCIES
   web-console (>= 4.1.0)
   webdrivers
   webpacker (~> 5.0)
+  will_paginate (= 3.3.1)!
 
 RUBY VERSION
    ruby 2.7.0p0
