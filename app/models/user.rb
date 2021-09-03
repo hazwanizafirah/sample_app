@@ -3,6 +3,13 @@ class User < ApplicationRecord
   before_save :downcase_email
   before_create :create_activation_digest
   has_secure_password
+  has_many :microposts, dependent: :destroy
+  has_many :active_relationships, class_name: Relationship.name,
+    foreign_key: :follower_id, dependent: :destroy
+  has_many :passive_relationships, class_name: Relationship.name,
+    foreign_key: :followed_id, dependent: :destroy
+  has_many :following, through: :active_relationships, source: :followed
+  has_many :followers, through: :passive_relationships, source: :follower
 
   VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
 
@@ -12,6 +19,18 @@ class User < ApplicationRecord
   validates :email, presence: true, length: {maximum: 255},
     format: {with: VALID_EMAIL_REGEX}
   validates :password, presence: true, length: {minimum: 6}, allow_nil: true
+
+  def follow other_user #Follows a user.
+    following << other_user
+  end
+
+  def unfollow other_user #Unfollows a user.
+    following.delete other_user
+  end
+
+  def following? other_user #Returns if the current user is following the other_user or not
+    following.include? other_user
+  end
 
   class << self
     def new_token
@@ -62,6 +81,10 @@ class User < ApplicationRecord
 
   def password_reset_expired?
     reset_sent_at < 2.hours.ago
+  end
+
+  def feed
+    Micropost.where user_id: (following_ids << id)
   end
 
   private
